@@ -38,5 +38,32 @@ public interface SearchViewState {
             this.searchQuery = searchQuery;
             this.result = result;
         }
+
+        public String getSearchQuery() {
+            return searchQuery;
+        }
+
+        public List<TmdbPerson> getResult() {
+            return result;
+        }
+    }
+
+    final class Error implements SearchViewState {
+
+        private final String searchQuery;
+        private final Throwable error;
+
+        public Error(String searchQuery, Throwable error) {
+            this.searchQuery = searchQuery;
+            this.error = error;
+        }
+
+        public String getSearchQuery() {
+            return searchQuery;
+        }
+
+        public Throwable getError() {
+            return error;
+        }
     }
 }
