@@ -26,7 +26,9 @@ public class SearchInteractor {
                 .map(people -> {
                     if (people.isEmpty()) {
                         return new SearchViewState.EmptyResult(query);
-                    } else return new SearchViewState.SearchResult(query, people);
+                    } else {
+                        return new SearchViewState.SearchResult(query, people);
+                    }
                 })
                 .startWith(new SearchViewState.Loading())
                 .onErrorReturn(er -> new SearchViewState.Error(query, er));
