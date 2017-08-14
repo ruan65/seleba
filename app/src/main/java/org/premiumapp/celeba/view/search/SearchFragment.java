@@ -2,6 +2,7 @@ package org.premiumapp.celeba.view.search;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +11,15 @@ import android.view.ViewGroup;
 import com.hannesdorfmann.mosby3.mvi.MviFragment;
 
 import org.premiumapp.celeba.R;
+import org.premiumapp.celeba.buisness_logic.interactor.search.SearchInteractor;
+import org.premiumapp.celeba.buisness_logic.networking.TmdbApiDecorator;
+import org.premiumapp.celeba.buisness_logic.search_engine.SearchEngine;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SearchFragment extends MviFragment<SearchView, SearchP> {
+//public class SearchFragment extends MviFragment<SearchView, SearchPresenter> {
+public class SearchFragment extends Fragment {
 
 
     public SearchFragment() {

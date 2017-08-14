@@ -45,10 +45,14 @@ dependencies {
 
     def retrofitVersion = '2.3.0'
     def butterknifeVersion = '8.7.0'
+    def okHttpVersion = '3.8.1'
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     // my
+
+    compile 'com.squareup.okhttp3:okhttp:' + okHttpVersion
+    compile 'com.squareup.okhttp3:logging-interceptor:' + okHttpVersion
 
     compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
     compile "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
