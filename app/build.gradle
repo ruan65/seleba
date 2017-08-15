@@ -46,6 +46,7 @@ dependencies {
     def retrofitVersion = '2.3.0'
     def butterknifeVersion = '8.7.0'
     def okHttpVersion = '3.8.1'
+    def rxbindingVersion = '2.0.0'
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -64,6 +65,11 @@ dependencies {
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.1.0'
     compile 'com.jakewharton.timber:timber:4.5.0'
+
+    compile "com.jakewharton.rxbinding2:rxbinding:$rxbindingVersion"
+    compile "com.jakewharton.rxbinding2:rxbinding-support-v4:$rxbindingVersion"
+    compile "com.jakewharton.rxbinding2:rxbinding-design:$rxbindingVersion"
+    compile "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$rxbindingVersion"
 
     compile 'com.hannesdorfmann.mosby3:mvi:3.0.4'
 

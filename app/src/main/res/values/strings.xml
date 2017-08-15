@@ -6,4 +6,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="search_query_hint">Search ...</string>
+    <string name="search_no_results">No results found</string>
+    <string name="error_unknown">An Error has occurred</string>
+
 </resources>
