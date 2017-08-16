@@ -16,6 +16,7 @@ import com.jakewharton.rxbinding2.widget.RxSearchView;
 import org.premiumapp.celeba.R;
 import org.premiumapp.celeba.ThisApp;
 import org.premiumapp.celeba.buisness_logic.interactor.search.SearchViewState;
+import org.premiumapp.celeba.view.MainActivity;
 
 import java.util.concurrent.TimeUnit;
 
@@ -60,6 +61,12 @@ public class SearchFragment extends MviFragment<SearchView, SearchPresenter>
         unbinder = ButterKnife.bind(this, view);
 
         return view;
+    }
+
+    @Override
+    public void onDetach() {
+        ((MainActivity) getActivity()).showVidgets();
+        super.onDetach();
     }
 
     @Override
