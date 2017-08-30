@@ -1,7 +1,5 @@
 package org.premiumapp.celeba.view.search;
 
-import android.support.annotation.NonNull;
-
 import com.hannesdorfmann.mosby3.mvi.MviBasePresenter;
 
 import org.premiumapp.celeba.buisness_logic.interactor.search.SearchInteractor;

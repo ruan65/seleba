@@ -30,7 +30,7 @@ public class SearchEngine {
 
         return backend.getPersonSearchResult(query)
                 .delay(200, TimeUnit.MICROSECONDS)
-                .flatMap(result -> Observable.fromIterable(result))
+                .flatMap(result -> Observable.fromIterable(result.results))
                 .toList()
                 .toObservable();
     }

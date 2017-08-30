@@ -1,8 +1,6 @@
 package org.premiumapp.celeba.buisness_logic.networking;
 
-import org.premiumapp.celeba.buisness_logic.model.TmdbPerson;
-
-import java.util.List;
+import org.premiumapp.celeba.buisness_logic.networking.response_objects.SearchPersonResponse;
 
 import io.reactivex.Observable;
 
@@ -18,11 +16,11 @@ public class TmdbApiDecorator {
         this.api = api;
     }
 
-    public Observable<List<TmdbPerson>> getPersonSearchResult(String query) {
-        return api.searchPearson(query, "0");
+    public Observable<SearchPersonResponse> getPersonSearchResult(String query) {
+        return api.searchPearson(query);
     }
-
-    public Observable<List<TmdbPerson>> getPersonSearchResult(String query, String page) {
-        return api.searchPearson(query, page);
-    }
+//
+//    public Observable<List<TmdbPerson>> getPersonSearchResult(String query, String page) {
+//        return api.searchPearson(query);
+//    }
 }

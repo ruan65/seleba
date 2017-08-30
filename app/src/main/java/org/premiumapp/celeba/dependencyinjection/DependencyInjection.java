@@ -19,13 +19,24 @@ import retrofit2.converter.moshi.MoshiConverterFactory;
 
 public class DependencyInjection {
 
-    private final HttpLoggingInterceptor httpLogger = new HttpLoggingInterceptor();
-    private final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(Cv.Urls.TMDB_3)
-            .client(new OkHttpClient.Builder().addInterceptor(httpLogger).build())
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(MoshiConverterFactory.create())
-            .build();
+    private final Retrofit retrofit = createRetrofitClient();
+
+    private Retrofit createRetrofitClient() {
+
+        HttpLoggingInterceptor httpLogger = new HttpLoggingInterceptor();
+        httpLogger.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(httpLogger).build();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Cv.Urls.TMDB_3)
+                .client(client)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(MoshiConverterFactory.create())
+                .build();
+
+        return retrofit;
+    }
 
     private final TmdbApi tmdbApi = retrofit.create(TmdbApi.class);
 
