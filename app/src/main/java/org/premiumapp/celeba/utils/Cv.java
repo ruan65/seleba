@@ -8,7 +8,7 @@ public interface Cv {
 
     interface Urls{
 
-        String API_KEY = "cdb506635272fb498e1b128f2df0f5c2";
+        String API_KEY = "";
         String TMDB_3 = "https://api.themoviedb.org/3/";
     }
 }
